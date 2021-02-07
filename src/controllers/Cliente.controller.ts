@@ -35,4 +35,14 @@ export class ClienteController {
       return res.send(error);
     }
   }
+
+  async eliminarCliente(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const data = await _clienteService.eliminarCliente(id);
+      return res.send(data);
+    } catch (error) {
+      return res.send(error);
+    }
+  }
 }

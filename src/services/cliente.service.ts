@@ -20,4 +20,9 @@ export class ClientService {
     const data = await _clienterepositorySql.actualizarCliente(cliente, id);
     return data;
   }
+
+  public async eliminarCliente(id: string): Promise<void> {
+    const data = await _clienterepositorySql.eliminarCliente(id);
+    return data;
+  }
 }

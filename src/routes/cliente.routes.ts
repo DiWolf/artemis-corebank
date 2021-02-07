@@ -7,5 +7,6 @@ module.exports = function ({ ClienteController }: any) {
   router.get("/", ClienteController.obtenTodosClientesActivos);
   router.post("/", ClienteController.crearNuevoCliente);
   router.put("/:id", ClienteController.actualizarCliente);
+  router.delete("/:id", ClienteController.eliminarCliente);
   return router;
 };

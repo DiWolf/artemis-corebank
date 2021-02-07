@@ -20,8 +20,8 @@ export class ClienteRepositorySQL implements ClienteRepositoryMethods {
       .query` UPDATE [clientes].[clientes] SET [nombre] = ${cliente.nombres}, [aPaterno] = ${cliente.aPaterno}, [aMaterno] =${cliente.aMaterno}, [curp] = ${cliente.curp} WHERE [id] = ${id}`;
   }
 
-  //
+  //Eliminar un cliente de la base de datos.
   async eliminarCliente(id: string): Promise<void> {
-    throw new Error("Method not implemented.");
+    (await cnx).query`DELETE FROM clientes.clientes WHERE id=${id}`;
   }
 }
